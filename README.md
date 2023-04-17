@@ -20,7 +20,7 @@ This is a simple weather app built using Java and JavaScript that fetches and di
 
 - Java
 - JavaScript
-- OpenWeatherMap API
+- [OpenWeatherMap API](https://openweathermap.org/)
 - Geolocation API
 - HTML
 - CSS
