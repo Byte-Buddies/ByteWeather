@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.container {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    width: 80%;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.weather-info {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.temp-info {
+    font-size: 2em;
+    margin-top: 10px;
+}
+
+.degree-symbol {
+    font-size: 1.2em;
+}
+
+.additional-info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/main.css">
+  <title>ByteWeather</title>
+</head>
+<body>
+<div class="container">
+  <h1 class="title">ByteWeather</h1>
+  <h6 class="title">ByteBuddies</h6>
+  <form>
+    <input type="text" id="search" placeholder="Search city or zip code">
+    <button type="submit" id="submit-btn">Get Weather</button>
+  </form>
+  <div class="weather-info">
+    <h2 class="city-name">City, Country</h2>
+    <div class="temp-info">
+<!--   list.main.temp   -->
+      <span class="temperature">temp from API</span><span class="degree-symbol">&#176;</span>C
+    </div>
+    <div class="additional-info">
+<!--   list.weather.description   -->
+<!--   list.weather.icon   -->
+      <p><span class="description">Weather description from API</span></p>
+      <p><span class="weather-icon">icon from API</span></p>
+    </div>
+  </div>
+</div>
+<script src="./src/main/js/app.js"></script>
+</body>
+</html>
