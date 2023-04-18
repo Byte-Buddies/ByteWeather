@@ -19,18 +19,6 @@ body {
     color: var(--accent);
 }
 
-.container {
-    max-width: 25rem; /* the information displayed will not exceed 25rem, best for mobile view */
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.title {
-    font-family: var(--headerfont);
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
 form {
     display: flex;
     justify-content: center;
@@ -51,27 +39,4 @@ button {
     border-radius: .5rem;
     color: var(--accent);
     cursor: pointer;
-}
-
-.weather-info {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.temp-info {
-    font-size: 2rem;
-    margin-top: 1rem;
-}
-
-.degree-symbol {
-    font-size: 2rem;
-}
-
-.additional-info { /* this container class can be used for more additional info */
-    display: flex;
-    justify-content: space-around;
-    margin-top: 2rem;
-    border: solid .1rem var(--accent);
-    border-radius: 1rem;
-    padding: 1rem;
 }
