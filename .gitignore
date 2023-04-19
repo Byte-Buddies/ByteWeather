@@ -1,4 +1,4 @@
-HELP.md
+src/HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
@@ -34,5 +34,7 @@ build/
 
 
 .mvn
-mvnw
-mvnw.cmd
+.mvn/mvnw
+.mvn/mvnw.cmd
+src
+target
