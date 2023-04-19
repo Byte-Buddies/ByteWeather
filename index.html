@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteWeather</title>
+
+    <!--  Google Fonts (Rock Salt, Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Rock+Salt&display=swap" rel="stylesheet">
+
+    <!--CSS styles-->
+    <link rel="stylesheet" href="src/styles/classes.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+
+</head>
+
+<body>
+<div class="container">
+  <h1 class="title">ByteWeather</h1>
+  <h4 class="title">ByteBuddies</h4>
+  <form>
+    <input type="text" id="search" placeholder="Search city or zip code">
+    <button type="submit" id="submit-btn">Get Weather</button>
+  </form>
+  <div class="weather-info">
+    <h3 class="city-name" id="loc">The current temperature in Example, Example is: </h3>
+    <div class="temp-info">
+<!--   list.main.temp   -->
+      <span class="temperature">70</span><span class="degree-symbol">&#176;</span>F
+    </div>
+    <div class="additional-info">
+<!--   list.weather.description   -->
+<!--   list.weather.icon   -->
+      <p><span class="description">condition</span></p>
+      <p><span class="weather-icon">icon</span></p>
+    </div>
+  </div>
+</div>
+<footer>
+    <p>&copy; 2023 ByteBuddies. All rights reserved.</p>
+</footer>
+
+<script src="./src/main/js/app.js"></script>
+</body>
+</html>
