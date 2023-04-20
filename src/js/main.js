@@ -17,9 +17,7 @@ function showPosition(position) { // function takes the geoLocation API 'positio
     getWeather(lat, lon); // calls getWeather using the lat and lon as parameters
 }
 
-// this function calls the OpenWeatherMap API
-// the key and url are stored in variables apiKey and apiUrl
-// lat, lon, and apiKey are inserted into the apiUrl using ${template literals}
+// this function calls the OpenWeatherMap API, lat, lon, and apiKey are inserted into the apiUrl using ${template literals}
 async function getWeather(lat, lon) {
     const apiKey = "dd9e07f2bfa8ccf8d60a8a83d41cad89"; // OpenWeatherMap API key
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
