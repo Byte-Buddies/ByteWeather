@@ -3,7 +3,7 @@
 .container {
     max-width: 25rem; /* the information displayed will not exceed 25rem, best for mobile view */
     margin: 0 auto;
-    padding-top: 1rem;
+    padding-top: 5rem;
     min-height: 100vh;
 }
 
