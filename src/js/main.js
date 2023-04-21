@@ -19,7 +19,7 @@ function showPosition(position) { // function takes the geoLocation API 'positio
 
 // this function calls the OpenWeatherMap API, lat, lon, and apiKey are inserted into the apiUrl using ${template literals}
 async function getWeather(lat, lon) {
-    const apiKey = "dd9e07f2bfa8ccf8d60a8a83d41cad89"; // OpenWeatherMap API key
+    const apiKey = "REPLACE_WITH_API_KEY"; // OpenWeatherMap API key
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
 
     // the fetch function is using the apiUrl we just created to:
