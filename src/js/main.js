@@ -1,3 +1,8 @@
+import dotenv from 'dotenv'; // loads .env into process.env object
+dotenv.config();
+const apiKey = process.env.API_KEY; // reads the key using process.env and assigns it to apiKey (using apiKey instead of actual key)
+
+
 // calls getLocation when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
     getLocation();
@@ -19,7 +24,7 @@ function showPosition(position) { // function takes the geoLocation API 'positio
 
 // this function calls the OpenWeatherMap API, lat, lon, and apiKey are inserted into the apiUrl using ${template literals}
 async function getWeather(lat, lon) {
-    const apiKey = "REPLACE_WITH_API_KEY"; // OpenWeatherMap API key
+    const apiKey = "apiKey"; // OpenWeatherMap API key
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
 
     // the fetch function is using the apiUrl we just created to:
