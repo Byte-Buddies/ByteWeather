@@ -18,7 +18,6 @@ This is a simple weather app built using Java and JavaScript that fetches and di
 
 ## Technologies Used
 
-- Java
 - JavaScript
 - [OpenWeatherMap API](https://openweathermap.org/)
 - Geolocation API
