@@ -8,7 +8,7 @@
 body {
 
     background: url("/Own-Project/WeatherApp/src/images/pathway\ copy.png") ;  
-    background-blend-mode:color-burn;
+    /* background-blend-mode:color-burn; */
 }
     
 .container {
