@@ -3,7 +3,7 @@
 .container {
     max-width: 25rem; /* the information displayed will not exceed 25rem, best for mobile view */
     margin: 0 auto;
-    padding: 1rem;
+    padding-top: 5rem;
     min-height: 100vh;
 }
 
@@ -13,7 +13,7 @@
     text-align: center;
     margin-bottom: 1rem;
 }
-.weather-info {
+.weather-container {
     text-align: center;
     margin-top: 2rem;
 }
