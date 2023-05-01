@@ -1,6 +1,6 @@
 # Weather App 🌦️
 
-This is a simple weather app built using Java and JavaScript that fetches and displays the current weather information of a user's location. The app makes use of the OpenWeatherMap API to fetch the weather data, and the browser's Geolocation API to get the user's current coordinates.
+This is a simple weather app built using JavaScript that fetches and displays the current weather information of a user's location. The app makes use of the OpenWeatherMap API to fetch the weather data, and the browser's Geolocation API to get the user's current coordinates.
 
 ## Table of Contents
 
@@ -18,7 +18,6 @@ This is a simple weather app built using Java and JavaScript that fetches and di
 
 ## Technologies Used
 
-- Java
 - JavaScript
 - [OpenWeatherMap API](https://openweathermap.org/)
 - Geolocation API
