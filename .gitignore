@@ -1,5 +1,6 @@
 ### IntelliJ IDEA ###
 .idea
+.idea/misc.xml
 *.iws
 *.iml
 *.ipr
@@ -7,4 +8,5 @@
 ### VS Code ###
 .vscode/
 
+node_modules
 .env
