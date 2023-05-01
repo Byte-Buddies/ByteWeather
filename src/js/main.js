@@ -2,7 +2,6 @@ import dotenv from 'dotenv'; // loads .env into process.env object
 dotenv.config();
 const apiKey = process.env.API_KEY; // reads the key using process.env and assigns it to apiKey (using apiKey instead of actual key)
 
-
 // calls getLocation when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
     getLocation();
