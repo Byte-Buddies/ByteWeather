@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="./js/login.js" type="text/javascript" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href = "./src/styles/login.css" rel="stylesheet" >
+    
+</head>
+<body>
+        
+        <div class="container">
+            <div class="image">
+               
+            </div> 
+       
+            <div class="login-section">
+                    <form class="login-form" action="./index.html">
+                        <img src="./src/images/profile_pic.svg" class="profile-pic">
+                        <h1>Sign In</h1>
+                        <div class="input-div">
+                            <div class="font-awesome">
+                                <i class="fa-solid fa-at fa-2xl" style="color: #F9A826;"></i>
+                            </div>
+                            <div>
+                                <input class="input" type="text" id="email" name="email" placeholder="Email" required><br>
+                            </div>   
+                        </div>    
+                        <div class="input-div">
+                            <div class="font-awesome">
+                                <i class="fa-solid fa-lock fa-2xl" style="color: #F9A826;"></i>
+                            </div>
+                            <div>
+                                <input class="input" type="text" id="password" name="password" placeholder="Password" required><br>
+                            </div>   
+                        </div>    
+                        <input class="input" type="submit" value="Log In" id="login-btn">
+                    </form>  
+                    <div class="create-account">
+                        <button type="button" id="createAcc-btn">Create Account</button>
+                    </div>
+                    
+            </div>                 
+                        
+        </div>
+            
+</body>
+</html>
