@@ -26,9 +26,3 @@ jobs:
           API_KEY: ${{ secrets.API_KEY_OPENWEATHER }}
         run: |
           echo "API_KEY=${API_KEY}" > .env
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
