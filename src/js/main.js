@@ -49,7 +49,7 @@ async function getWeather(lat, lon) {
 // lat, lon, and key are inserted into the URL using ${template literals}
 async function getWeather(lat, lon) {
     const apiKey = "dd9e07f2bfa8ccf8d60a8a83d41cad89"; // OpenWeatherMap API key
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
 
     // the fetch function is using the apiUrl we just created to:
     // 1. authorize us using API key
@@ -72,7 +72,7 @@ async function getWeather(lat, lon) {
 function displayWeather(data) {
     const city = data.name;
     const weather = data.weather[0].description;
-    const weatherIcon = data.weather.icon;
+    // const weatherIcon = data.weather.icon;
     const temperature = Math.round(data.main.temp);
     const rain = data.rain;
 
@@ -81,5 +81,6 @@ function displayWeather(data) {
     weatherContainer.innerHTML = `
     <h2>${city}</h2>
     <p>${weather}</p>
-    <p>${temperature}°F</p>`;
+    <p>${temperature}°F</p>
+  `;
 }
