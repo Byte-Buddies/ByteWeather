@@ -54,6 +54,5 @@ function displayWeather(data) {
     weatherContainer.innerHTML = `
     <h2>${city}</h2>
     <p>${weather}</p>
-    <p>${temperature}°F</p>
-  `;
+    <p>${temperature}°F</p>`;
 }

@@ -12,7 +12,6 @@ function success(position) { //Location Available
     const latitude = position.coords.latitude; // gets and saves latitude
 
     // work in progress - need to find a way to change lat and long into city and state
-
     getLocation.innerHTML = `The temperature in ${latitude}, ${longitude} is: }`; // pushes user location to the screen
 }
 function fail(message) { // Location Unavailable
@@ -21,3 +20,17 @@ function fail(message) { // Location Unavailable
 }
 // add to HTML <script src="js/geoLocation.js"></script>
 // add to HTML <script src="js/modernizr-custom.js"></script>
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        console.log("Geolocation is not supported by this browser.");
+    }
+}
+
+function showPosition(position) {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+    getWeather(lat, lon);
+}
