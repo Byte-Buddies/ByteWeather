@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
-    "dotenv": "^16.0.3"
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "lite-server": "^2.6.1"
   },
   "scripts": {
-    "start": "npm run start:client & npm run start:server",
-    "start:client": "lite-server",
-    "start:server": "nodemon server/server.js"
+    "start": "lite-server",
+    "baseDir": "./",
+    "index": "index.html"
   },
   "Content-Type": "application/json"
 }
-
-
-
