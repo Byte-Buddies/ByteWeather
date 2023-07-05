@@ -6,7 +6,7 @@ async function fetchWeatherData(params) {
 
 		const response = await fetch(apiUrl, {
 				headers: {
-						'X-Api-Key': API_KEY
+						'X-Api-Key': process.env.API_KEY
 				},
 		});
 
