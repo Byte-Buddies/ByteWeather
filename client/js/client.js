@@ -1,4 +1,6 @@
-import { getWeatherByLatLon, getWeatherByCity, getWeatherByZip } from './api.js';
+import {getWeatherByCity, getWeatherByLatLon, getWeatherByZip} from "./weather.js";
+import {displayWeather} from "./display.js";
+
 const submitButton = document.getElementById('submit-btn');
 const searchInput = document.getElementById('search');
 

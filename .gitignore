@@ -5,4 +5,4 @@
 *.ipr
 .vscode/
 node_modules
-config.js
+client/js/.env
