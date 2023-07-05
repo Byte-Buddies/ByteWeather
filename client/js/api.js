@@ -1,4 +1,5 @@
 import { displayWeather } from './display.js';
+import { config } from '../../config.js';
 
 // Generic function to fetch weather data
 async function fetchWeatherData(params) {
@@ -6,7 +7,7 @@ async function fetchWeatherData(params) {
 
 		const response = await fetch(apiUrl, {
 				headers: {
-						'X-Api-Key': process.env.API_KEY
+						'X-Api-Key': config.API_KEY
 				},
 		});
 
