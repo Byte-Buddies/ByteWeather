@@ -1,7 +1,7 @@
 /* this css file contains all styles that have class selectors*/
 
 .container {
-    max-width: 25rem; /* the information displayed will not exceed 25rem, best for mobile view */
+    max-width: 25rem; /* best for mobile view */
     margin: 0 auto;
     padding-top: 5rem;
     min-height: 100vh;
@@ -13,25 +13,24 @@
     text-align: center;
     margin-bottom: 1rem;
 }
-.weather-container {
-    text-align: center;
-    margin-top: 2rem;
-}
 
-.temp-info {
-    font-size: 2rem;
+.min-max-temp {
+    display: flex;
+    justify-content: space-around;
     margin-top: 1rem;
 }
 
-.degree-symbol {
-    font-size: 2rem;
+.card {
+    border: .1rem dashed var(--border);
+    background-color: var(--cardBackground);
+    padding: 1rem;
 }
 
-.additional-info { /* this container class can be used for more additional info */
-    display: flex;
-    justify-content: space-around;
-    margin-top: 2rem;
-    border: solid .1rem var(--heading);
-    border-radius: 1rem;
-    padding: 1rem;
+.fa-sun {
+    text-align: center;
+    color: #fdcc0a;
+}
+.fa-moon {
+    text-align: center;
+    color: #797777;
 }

@@ -7,12 +7,18 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "lite-server": "^2.6.1",
-    "node-fetch": "^3.3.1"
+    "node-fetch": "^3.3.1",
+    "nodemon": "^3.0.0"
   },
   "scripts": {
     "start": "lite-server",
     "baseDir": "./",
-    "index": "index.html"
+    "index": "index.html",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill others \"npm run server\" \"npm run start\""
   },
-  "Content-Type": "application/json"
+  "Content-Type": "application/json",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
 }

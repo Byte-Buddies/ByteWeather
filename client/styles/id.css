@@ -1,0 +1,5 @@
+#weather-container {
+	padding: 1rem;
+	background-color: var(--cardBackground);
+	margin: 1rem;
+}

@@ -1,20 +1,17 @@
 // Celsius to Fahrenheit conversion
 function celsiusToFahrenheit(celsius) {
-		return celsius * 9/5 + 32;
+		return Math.round(celsius * 9/5 + 32);
 }
 
 // unix to local time conversion
 function unixToLocalTime(unixTime) {
 		const date = new Date(unixTime * 1000);
-		return {
-				hours: date.getHours(),
-				minutes: date.getMinutes()
-		};
+		return date.toLocaleTimeString();
 }
 
 // wind speed
 function msToMph(ms) {
-		return ms * 2.237;
+		return Math.round(ms * 2.237);
 }
 
 // wind direction

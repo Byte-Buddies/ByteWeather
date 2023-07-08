@@ -20,8 +20,8 @@ function displayWeather(data) {
 		const maxTemp = celsiusToFahrenheit(data.max_temp);
 
 		// wind speed and direction
-		const windSpeed = msToMph(wind_speed);
-		const windDegrees = degreesToDirection(data.wind_degrees);
+		const windSpeed = msToMph(data.wind_speed);
+		const windDirection = degreesToDirection(data.wind_degrees);
 
 		// convert unix time to local time - sunrise
 		const sunriseTime = unixToLocalTime(data.sunrise);
@@ -31,16 +31,29 @@ function displayWeather(data) {
 
 		const weatherContainer = document.querySelector("#weather-container");
 		weatherContainer.innerHTML = `
-        <p>Cloud Cover: ${cloudPercentage}%</p>
-        <p>Temperature: ${temperature}°F</p>
+        
+        <section class="card">
+        <p>Current Temp: ${temperature}°F</p>
         <p>Feels like: ${feelsLike}°F</p>
+        </section>
+        <div class="min-max-temp">
+										<aside class="card">
+										<i class="fa-solid fa-sun"></i>
+										<p>Sunrise: ${sunriseTime}</p>
+										<p>Max Temp: ${maxTemp}°F</p>
+										</aside>
+										<aside class="card">
+										<i class="fa-solid fa-moon"></i>
+										<p>Sunset: ${sunsetTime}</p>
+										<p>Min Temp: ${minTemp}°F</p>
+										</aside>
+        </div>
+        <section class="card">
         <p>Humidity: ${humidity}%</p>
-        <p>Min Temperature: ${minTemp}°F</p>
-        <p>Max Temperature: ${maxTemp}°F</p>
-        <p>Wind Speed: ${windSpeed}</p>
-        <p>Wind Degrees: ${windDegrees}</p>
-        <p>Sunrise: ${sunriseTime}AM</p>
-        <p>Sunset: ${sunsetTime}PM</p>
+        <p>Wind Speed: ${windSpeed} MPH</p>
+        <p>Wind Direction: ${windDirection}</p>
+        <p>Cloud Cover: ${cloudPercentage}%</p>
+        </section>
     `;
 }
 

@@ -58,6 +58,23 @@ button:hover {
     background-color: var(--button);
     border: .1rem dashed var(--background);
 }
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*align-items: center;*/
+    margin-top: 2rem;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*align-items: center;*/
+    margin-top: 2rem;
+}
+
 footer {
     background-color: var(--background);
     color: var(--paragraph);

@@ -1,31 +1,34 @@
-import { displayWeather } from './display.js';
-
 async function fetchWeatherData(params) {
-		const response = await fetch(`/weather?${params}`);
-		if (response.ok) {
-				const data = await response.json();
-				displayWeather(data);
-		} else {
-				console.error('Error:', response.status);
+		try {
+				const response = await fetch(`http://localhost:2000/weather?${params}`);
+				if (response.ok) {
+						return await response.json();
+				} else {
+						console.error('Error: unable to connect', response.status);
+						return null;
+				}
+		} catch (err) {
+				console.error('Error:', err);
+				return null;
 		}
 }
 
 // Get weather data by latitude and longitude
 		async function getWeatherByLatLon(lat, lon) {
 				const params = `lat=${lat}&lon=${lon}`;
-				await fetchWeatherData(params);
+				return await fetchWeatherData(params);
 		}
 
 // Get weather data by city name
 		async function getWeatherByCity(city) {
 				const params = `city=${city}`;
-				await fetchWeatherData(params);
+				return await fetchWeatherData(params);
 		}
 
 // Get weather data by zip code
 		async function getWeatherByZip(zip) {
 				const params = `zip=${zip}`;
-				await fetchWeatherData(params);
+				return await fetchWeatherData(params);
 		}
 
-		export { getWeatherByLatLon, getWeatherByCity, getWeatherByZip };
+export { getWeatherByLatLon, getWeatherByCity, getWeatherByZip };
