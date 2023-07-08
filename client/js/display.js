@@ -1,6 +1,6 @@
 import { celsiusToFahrenheit, unixToLocalTime, msToMph, degreesToDirection } from './helper.js';
 
-// finally, display the weather data received from the server
+// display the weather data received from the server
 function displayWeather(data) {
 
 		// cloud cover percentage
@@ -30,31 +30,38 @@ function displayWeather(data) {
 		const sunsetTime = unixToLocalTime(data.sunset);
 
 		const weatherContainer = document.querySelector("#weather-container");
-		weatherContainer.innerHTML = `
-        
-        <section class="card">
-        <p>Current Temp: ${temperature}°F</p>
-        <p>Feels like: ${feelsLike}°F</p>
-        </section>
-        <div class="min-max-temp">
-										<aside class="card">
-										<i class="fa-solid fa-sun"></i>
-										<p>Sunrise: ${sunriseTime}</p>
-										<p>Max Temp: ${maxTemp}°F</p>
-										</aside>
-										<aside class="card">
-										<i class="fa-solid fa-moon"></i>
-										<p>Sunset: ${sunsetTime}</p>
-										<p>Min Temp: ${minTemp}°F</p>
-										</aside>
+
+		const weatherDataPoints = [
+				{icon: 'fa-temperature-half', label: 'Current Temp', value: `${temperature}°F`},
+				{icon: 'fa-fingerprint', label: 'Feels like', value: `${feelsLike}°F`},
+				{icon: 'fa-temperature-arrow-up', label: 'Max Temp', value: `${maxTemp}°F`},
+				{icon: 'fa-sun', label: 'Sunrise', value: `${sunriseTime}`},
+				{icon: 'fa-moon', label: 'Sunset', value: `${sunsetTime}`},
+				{icon: 'fa-temperature-arrow-down', label: 'Min Temp', value: `${minTemp}°F`},
+				{icon: 'fa-droplet', label: 'Humidity', value: `${humidity}%`},
+				{icon: 'fa-wind', label: 'Wind Speed', value: `${windSpeed} MPH<br>${windDirection}`},
+				{icon: 'fa-cloud', label: 'Cloud Cover', value: `${cloudPercentage}%`}
+		];
+
+		let html = '';
+
+		for (let dataPoint of weatherDataPoints) {
+				html += `
+    <div class="flip-container">
+      <section class="flip">
+        <div class="front">
+          <p><i class="fa-solid ${dataPoint.icon} fa-2xl"></i><br>${dataPoint.label}</p>
         </div>
-        <section class="card">
-        <p>Humidity: ${humidity}%</p>
-        <p>Wind Speed: ${windSpeed} MPH</p>
-        <p>Wind Direction: ${windDirection}</p>
-        <p>Cloud Cover: ${cloudPercentage}%</p>
-        </section>
-    `;
+        <div class="back">
+          <p>${dataPoint.value}</p>
+        </div>
+      </section>
+    </div>
+  `;
+		}
+
+		weatherContainer.innerHTML = html;
+
 }
 
 export { displayWeather };

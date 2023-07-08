@@ -16,7 +16,7 @@ function msToMph(ms) {
 
 // wind direction
 function degreesToDirection(degrees) {
-		const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW', 'N'];
+		const directions = ['North', 'Northeast', 'East', 'Southeast', 'South', 'Southwest', 'West', 'Northwest', 'North'];
 		const index = Math.round(degrees / 45);
 		return directions[index];
 }

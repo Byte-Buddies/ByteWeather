@@ -14,23 +14,26 @@
     margin-bottom: 1rem;
 }
 
-.min-max-temp {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 1rem;
-}
-
-.card {
-    border: .1rem dashed var(--border);
-    background-color: var(--cardBackground);
-    padding: 1rem;
-}
-
 .fa-sun {
-    text-align: center;
     color: #fdcc0a;
 }
+
+.fa-temperature-arrow-up {
+    color: #fd0101;
+}
+
+.fa-temperature-arrow-down {
+    color: #0116fd;
+}
+
 .fa-moon {
-    text-align: center;
     color: #797777;
+}
+
+.fa-cloud {
+    color: #797777;
+}
+
+.fa-droplet {
+    color: #6ea6e0;
 }
