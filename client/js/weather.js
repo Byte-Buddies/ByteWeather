@@ -1,6 +1,6 @@
 async function fetchWeatherData(params) {
 		try {
-				const response = await fetch(`https://ByteWeather-0513.eba-8gr6fh2n.us-east-1.elasticbeanstalk.com/weather?${params}`);
+				const response = await fetch(`http://byteweather-0513.eba-8gr6fh2n.us-east-1.elasticbeanstalk.com/weather?${params}`);
 				if (response.ok) {
 						return await response.json();
 				} else {
