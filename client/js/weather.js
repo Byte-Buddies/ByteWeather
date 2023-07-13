@@ -1,6 +1,6 @@
 async function fetchWeatherData(params) {
 		try {
-				const response = await fetch(`http://localhost:2000/weather?${params}`);
+				const response = await fetch(`ByteWeather-env.eba-hk98mss3.us-east-1.elasticbeanstalk.com/weather?${params}`);
 				if (response.ok) {
 						return await response.json();
 				} else {
