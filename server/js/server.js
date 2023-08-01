@@ -25,20 +25,41 @@ app.get('/weather', async (req, res) => {
 		console.log(apiUrl);
 
 		try {
-
 				const response = await fetch(apiUrl, {
-				headers: {
-						'X-Api-Key': process.env.API_KEY,
-				},
-		});
+						headers: {
+								'X-Api-Key': process.env.API_KEY,
+						},
+				});
 
 				if (!response.ok) {
 						console.error('Response from weather API was not OK', response.status, response.statusText);
-						return res.status(500).json({ error: 'Failed to fetch weather data.' });
+						return res.status(500).json({error: 'Failed to fetch weather data.'});
 				}
 
 				const data = await response.json();
 
+				// If lat and lon are provided, use them to get the city name
+				if (lat && lon) {
+						const locationResponse = await fetch(`https://api.api-ninjas.com/v1/reversegeocoding?lat=${lat}&lon=${lon}`, {
+								headers: {
+										'X-Api-Key': process.env.API_KEY,
+								},
+						});
+
+						if (!locationResponse.ok) {
+								console.error('Response from location API was not OK', locationResponse.status, locationResponse.statusText);
+								return res.status(500).json({error: 'Failed to fetch location data.'});
+						}
+
+						const locationData = await locationResponse.json();
+
+						if (Array.isArray(locationData) && locationData.length > 0) {
+								const firstLocation = locationData[0]; // Use only the first city from the returned list
+								data.location = `${firstLocation.name}, ${firstLocation.country}`;
+						}
+				} else if (city || zip) {
+						data.location = city ? `${city}` : `${zip}`;
+				}
 				res.json(data);
 		} catch (error) {
 				console.error('Error occurred while handling /weather request:', error);
