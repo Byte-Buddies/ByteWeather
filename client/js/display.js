@@ -3,6 +3,11 @@ import { celsiusToFahrenheit, unixToLocalTime, msToMph, degreesToDirection } fro
 // display the weather data received from the server
 function displayWeather(data) {
 
+		if (!data) {
+				console.error('Error: no weather data found');
+				return;
+		}
+
 		const temperature = celsiusToFahrenheit(data.temp);
 		const feelsLike = celsiusToFahrenheit(data.feels_like);
 		const minTemp = celsiusToFahrenheit(data.min_temp);
@@ -14,7 +19,7 @@ function displayWeather(data) {
 
 		// display location data
 		const locationContainer = document.querySelector(".location");
-		locationContainer.innerHTML = data.location;
+		locationContainer.textContent = data.location;
 
 		// display weather data
 		const weatherContainer = document.querySelector("#weather-container");

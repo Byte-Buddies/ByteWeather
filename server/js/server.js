@@ -5,7 +5,13 @@ import fetch from 'node-fetch';
 
 dotenv.config();
 const app = express();
-app.use(cors());
+
+const corsOptions = {
+		origin: 'https://byte-buddies.github.io', // allows only this origin
+		optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 
 app.get('/weather', async (req, res) => {
 		const { lat, lon, city, zip } = req.query;
@@ -53,7 +59,7 @@ app.get('/weather', async (req, res) => {
 
 						const locationData = await locationResponse.json();
 
-						if (Array.isArray(locationData) && locationData.length > 0) {
+						if (Array.isArray(locationData)) {
 								const firstLocation = locationData[0]; // Use only the first city from the returned list
 								data.location = `${firstLocation.name}, ${firstLocation.country}`;
 						}

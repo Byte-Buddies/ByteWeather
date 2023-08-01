@@ -2,7 +2,12 @@ async function fetchWeatherData(params) {
 		try {
 				const response = await fetch(`https://byteweather.byte-buddies.com/weather?${params}`);
 				if (response.ok) {
-						return await response.json();
+						const data = await response.json();
+						if (data.error) {
+								console.error('Server error:', data.error);
+								return null;
+						}
+						return data;
 				} else {
 						console.error('Error: unable to connect', response.status);
 						return null;

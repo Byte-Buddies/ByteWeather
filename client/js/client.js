@@ -12,18 +12,26 @@ function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(success, fail);
     } else {
-        console.log("Geolocation is not supported by this browser.");
+        console.log("Geolocation is not supported or allowed");
     }
 }
 
 function success(position) {
-    const lat = position.coords.latitude;
-    const lon = position.coords.longitude;
-    getWeatherByLatLon(lat, lon).then(r => displayWeather(r));
+  const lat = position.coords.latitude;
+  const lon = position.coords.longitude;
+
+  getWeatherByLatLon(lat, lon)
+    .then(data => {
+      if (data) {
+        displayWeather(data);
+      } else {
+        console.error('Error fetching weather data.');
+      }
+    });
 }
 
 function fail(message) {
-    const getLocationButton = document.getElementById('loc');
+    const getLocationButton = document.querySelector('.location');
     getLocationButton.textContent = "Location Unavailable";
     console.log(message.code);
 }
@@ -33,9 +41,23 @@ submitButton.addEventListener('click', (event) => {
     const inputValue = searchInput.value.trim();
 
     if (isNumeric(inputValue)) {
-        getWeatherByZip(inputValue).then(r => displayWeather(r));
+        getWeatherByZip(inputValue)
+          .then(data => {
+              if (data) {
+                  displayWeather(data);
+              } else {
+                  console.error('Error fetching weather data.');
+              }
+          });
     } else {
-        getWeatherByCity(inputValue).then(r => displayWeather(r));
+        getWeatherByCity(inputValue)
+          .then(data => {
+              if (data) {
+                  displayWeather(data);
+              } else {
+                  console.error('Error fetching weather data.');
+              }
+          });
     }
 });
 
