@@ -1,6 +1,6 @@
 async function fetchWeatherData(params) {
 		try {
-				const response = await fetch(`http://byteweather.byte-buddies.com/weather?${params}`);
+				const response = await fetch(`https://byteweather.byte-buddies.com/weather?${params}`);
 				if (response.ok) {
 						return await response.json();
 				} else {
