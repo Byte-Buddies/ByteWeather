@@ -6,12 +6,12 @@ import fetch from 'node-fetch';
 dotenv.config();
 const app = express();
 
-const corsOptions = {
-		origin: 'https://www.byteweather.byte-buddies.com', // allows only this origin
-		// origin: 'http://localhost:63342',
-		optionsSuccessStatus: 200,
-};
-app.use(cors());
+// const corsOptions = {
+// 		origin: 'https://www.byteweather.byte-buddies.com', // allows only this origin
+// 		// origin: 'http://localhost:63342',
+// 		optionsSuccessStatus: 200,
+// };
+// app.use(cors());
 
 app.get('/weather', async (req, res) => {
 		const { lat, lon, city, zip } = req.query;
