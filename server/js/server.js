@@ -7,8 +7,8 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-		// origin: 'https://www.byteweather.byte-buddies.com', // allows only this origin
-		origin: 'http://localhost:63342',
+		origin: 'https://www.byteweather.byte-buddies.com', // allows only this origin
+		// origin: 'http://localhost:63342',
 		optionsSuccessStatus: 200,
 };
 app.use(cors());

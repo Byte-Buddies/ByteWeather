@@ -45,7 +45,7 @@ function displayWeather(data) {
           <p><i class="fa-solid ${dataPoint.icon} fa-2xl"></i><br>${dataPoint.label}</p>
         </div>
         <div class="back">
-          <p>${dataPoint.value}</p>
+          <p>${dataPoint.label}<br>${dataPoint.value}</p>
         </div>
       </section>
     </div>
