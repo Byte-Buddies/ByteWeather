@@ -1,8 +1,6 @@
-import {baseURL} from "./config.js";
-
 async function fetchWeatherData(params) {
 		try {
-				const response = await fetch(`${baseURL}/weather?${params}`);
+				const response = await fetch(`/weather?${params}`);
 				if (response.ok) {
 						const data = await response.json();
 						if (data.error) {
