@@ -39,6 +39,7 @@ function fail(message) {
 submitButton.addEventListener('click', (event) => {
     event.preventDefault(); // prevent the form from submitting normally
     const inputValue = searchInput.value.trim();
+    console.log(inputValue);
 
     if (isNumeric(inputValue)) {
         getWeatherByZip(inputValue)
@@ -46,7 +47,7 @@ submitButton.addEventListener('click', (event) => {
               if (data) {
                   displayWeather(data);
               } else {
-                  console.error('Error fetching weather data.');
+                  console.error('Error fetching weather data by zipcode.');
               }
           });
     } else {
@@ -55,7 +56,7 @@ submitButton.addEventListener('click', (event) => {
               if (data) {
                   displayWeather(data);
               } else {
-                  console.error('Error fetching weather data.');
+                  console.error('Error fetching weather data by city.');
               }
           });
     }

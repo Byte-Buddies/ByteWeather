@@ -28,6 +28,14 @@ html, body {
     color: var(--paragraph);
 }
 
+h3 {
+    font-family: var(--headerfont);
+    font-size: 1rem;
+    color: var(--heading);
+    text-align: center;
+    margin: 1rem;
+}
+
 form {
     display: flex;
     justify-content: center;

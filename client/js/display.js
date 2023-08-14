@@ -16,11 +16,7 @@ function displayWeather(data) {
 		const windDirection = degreesToDirection(data.wind_degrees);
 		const sunriseTime = unixToLocalTime(data.sunrise); // convert unix time to local time - sunrise
 		const sunsetTime = unixToLocalTime(data.sunset); // convert unix time to local time - sunset
-
-		// display location data
-		const locationContainer = document.querySelector(".location");
-		locationContainer.textContent = data.location;
-
+		
 		// display weather data
 		const weatherContainer = document.querySelector("#weather-container");
 		const weatherDataPoints = [
@@ -35,6 +31,10 @@ function displayWeather(data) {
 				{icon: 'fa-cloud', label: 'Cloud Cover', value: `${data.cloud_pct}%`}
 		];
 
+		// display location data
+		const locationContainer = document.querySelector(".location");
+		locationContainer.textContent = data.location;
+		
 		let html = '';
 
 		for (let dataPoint of weatherDataPoints) {
