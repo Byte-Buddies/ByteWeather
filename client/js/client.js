@@ -32,7 +32,7 @@ function success(position) {
 
 function fail(message) {
     const getLocationButton = document.querySelector('.location');
-    getLocationButton.textContent = "Location Unavailable";
+    getLocationButton.textContent = "Enter a city or zip code";
     console.log(message.code);
 }
 

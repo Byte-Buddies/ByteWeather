@@ -1,12 +1,9 @@
-import dotenv from 'dotenv';
 import express from 'express';
-// import cors from 'cors';
 import fetch from 'node-fetch';
+import { config } from './config.js';
 
-dotenv.config();
 const app = express();
 app.use(express.static('client'));
-
 
 app.get('/weather', async (req, res) => {
 		const { lat, lon, city, zip } = req.query;
@@ -26,12 +23,12 @@ app.get('/weather', async (req, res) => {
 		console.log(apiUrl);
 
 		try {
+				const apiKey = await config();
 				const response = await fetch(apiUrl, {
 						headers: {
-								'X-Api-Key': process.env.API_KEY,
+								'X-Api-Key': apiKey,
 						},
 				});
-
 				if (!response.ok) {
 						console.error('Response from weather API was not OK', response.status, response.statusText);
 						return res.status(500).json({error: 'Failed to fetch weather data.'});
