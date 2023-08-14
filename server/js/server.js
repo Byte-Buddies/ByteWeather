@@ -1,17 +1,12 @@
 import dotenv from 'dotenv';
 import express from 'express';
-import cors from 'cors';
+// import cors from 'cors';
 import fetch from 'node-fetch';
 
 dotenv.config();
 const app = express();
+app.use(express.static('client'));
 
-// const corsOptions = {
-// 		origin: 'https://www.byteweather.byte-buddies.com', // allows only this origin
-// 		// origin: 'http://localhost:63342',
-// 		optionsSuccessStatus: 200,
-// };
-// app.use(cors());
 
 app.get('/weather', async (req, res) => {
 		const { lat, lon, city, zip } = req.query;
@@ -75,4 +70,7 @@ app.get('/weather', async (req, res) => {
 
 const port = process.env.PORT || 2000;
 
-app.listen(port, () => console.log(`Server started on port ${port}`));
+app.listen(2000, '0.0.0.0', () => {
+		console.log(`Server started on port ${port}`);
+});
+
